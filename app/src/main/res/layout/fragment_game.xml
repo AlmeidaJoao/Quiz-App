@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="gameFragmentViewModel"
+            type="com.example.quizapp.game.GameFragmentViewModel"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/question_text" />
+
+            <TextView
+                android:id="@+id/textView"
+                style="@style/medium_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@{gameFragmentViewModel.currentQuestion.text}"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                tools:text="Pergunta. . ." />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <RadioButton
+                    android:id="@+id/answers_one"
+                    style="@style/radio_button_style"
+                    tools:text="Resposta 1"
+                    android:text="@{gameFragmentViewModel.answers[0]}"
+                    android:onClick="@{() -> gameFragmentViewModel.getSelectedAnswerIndex(0)}"/>
+
+                <RadioButton
+                    android:id="@+id/answer_two"
+                    tools:text="Resposta 2"
+                    style="@style/radio_button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{gameFragmentViewModel.answers[1]}"
+                    android:textSize="24sp"
+                    android:onClick="@{() -> gameFragmentViewModel.getSelectedAnswerIndex(1)}"/>
+
+                <RadioButton
+                    android:id="@+id/answer_three"
+                    tools:text="Resposta 3"
+                    style="@style/radio_button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{gameFragmentViewModel.answers[2]}"
+                    android:textSize="24sp"
+                    android:onClick="@{() -> gameFragmentViewModel.getSelectedAnswerIndex(2)}"/>
+
+                <RadioButton
+                    android:id="@+id/answer_four"
+                    tools:text="Resposta 4"
+                    style="@style/radio_button_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{gameFragmentViewModel.answers[3]}"
+                    android:textSize="24sp"
+                    android:onClick="@{() -> gameFragmentViewModel.getSelectedAnswerIndex(3)}"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_button"
+                android:theme="@style/skip_button"
+                app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+                app:layout_constraintEnd_toStartOf="@+id/button2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                android:onClick="@{() -> gameFragmentViewModel.onCancel()}"/>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:theme="@style/normal_button"
+                android:layout_height="wrap_content"
+                android:text="@string/next_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+                android:onClick="@{() -> gameFragmentViewModel.onNext()}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

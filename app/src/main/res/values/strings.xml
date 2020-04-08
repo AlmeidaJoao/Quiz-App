@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="quiz_name">Prove that\nyou know me</string>
+    <!-- Button Texts-->
+    <string name="play_button">Jogar</string>
+    <string name="next_button">Proxima</string>
+    <string name="cancel_button">Cancelar</string>
+    <string name="tryAgain_button">Try Again</string>
+    <string name="clean_button">Limpar</string>
+
+    <!--TextView texts-->
+    <string name="instructions">Instructions</string>
+    <string name="game_over">Game Over</string>
+    <string name="game_score">Pontuacao: %d</string>
+    <string name="score_history">Historico</string>
+    <string name="game_fragment_title">Pergunta [%d/%d]</string>
+    <string name="about_fragment">About</string>
+</resources>

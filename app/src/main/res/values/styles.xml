@@ -1,0 +1,39 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="medium_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+    <!-- Normal Button-->
+    <style name="normal_button" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="colorButtonNormal">#55FFB6</item>
+        <item name="colorControlHighlight">#57FF85</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="colorAccent">#57FF85</item>
+    </style>
+    <!-- Cancel Button-->
+    <style name="skip_button" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">#FF4855</item>
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Borderless.Colored</item>
+        <item name="colorControlHighlight">#FF2013</item>
+        <item name="colorAccent">#FF2013</item>
+    </style>
+
+    <style name="radio_button_style" parent="medium_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">18dp</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+</resources>

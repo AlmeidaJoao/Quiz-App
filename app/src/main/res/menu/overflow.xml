@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/instructionsFragment"
+        android:icon="@drawable/book"
+        android:title="@string/instructions" />
+    <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/info_circle"
+        android:title="@string/score_history" />
+</menu>
